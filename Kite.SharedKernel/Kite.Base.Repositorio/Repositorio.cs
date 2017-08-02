@@ -4,7 +4,7 @@ using Kite.Base.Dominio.Repositorio;
 
 namespace Kite.Base.Repositorio
 {
-    public class Repositorio<T> : RepositorioConsulta<T>, IRepositorio<T> where T : IAggregateRoot
+    public class Repositorio<T> : RepositorioConsulta<T>, IRepositorio<T> where T : EntidadeBase, IAggregateRoot
     {
         public Repositorio(ISession sessao) : base(sessao)
         {

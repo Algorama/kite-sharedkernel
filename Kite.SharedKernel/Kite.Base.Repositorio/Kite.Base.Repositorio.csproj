@@ -56,6 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mock\MockRepositorioHelper.cs" />
+    <Compile Include="Mock\MockRepositorioSessao.cs" />
+    <Compile Include="Mock\MockRepositorioConsulta.cs" />
+    <Compile Include="Mock\MockRepositorio.cs" />
     <Compile Include="MsSqlAzureDialect.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="PgSqlCustomDialect.cs" />

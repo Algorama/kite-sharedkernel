@@ -6,7 +6,7 @@ using Kite.Base.Dominio.Entidades;
 
 namespace Kite.Base.Dominio.Repositorio
 {
-    public interface IRepositorioConsulta<T> where T : IEntidade
+    public interface IRepositorioConsulta<T> where T : EntidadeBase
     {
         T Retorna(long id);
 

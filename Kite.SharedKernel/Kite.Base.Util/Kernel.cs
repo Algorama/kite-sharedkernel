@@ -1,6 +1,7 @@
 ﻿using Ninject;
 using Kite.Base.Dominio.Repositorio;
 using Kite.Base.Repositorio;
+using Kite.Base.Repositorio.Mock;
 
 namespace Kite.Base.Util
 {
@@ -12,6 +13,12 @@ namespace Kite.Base.Util
         {
             _kernel = new StandardKernel();
             _kernel.Bind<IRepositorioHelper>().To<RepositorioHelper>();
+        }
+
+        public static void StartMock()
+        {
+            _kernel = new StandardKernel();
+            _kernel.Bind<IRepositorioHelper>().To<MockRepositorioHelper>();
         }
 
         public static T Get<T>()

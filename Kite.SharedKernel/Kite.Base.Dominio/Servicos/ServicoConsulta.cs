@@ -8,13 +8,13 @@ using Kite.Base.Dominio.ViewModels;
 
 namespace Kite.Base.Dominio.Servicos
 {
-    public class ServicoConsulta<T> where T : IEntidade
+    public class ServicoConsulta<T> where T : EntidadeBase
     {
-        private const int PAGE_SIZE = 15;
+        private const int PageSize = 15;
 
         public List<string> Mensagens { get; set; }
 
-        protected IRepositorioHelper Helper { get; }
+        public IRepositorioHelper Helper { get; }
         
         public ServicoConsulta(IRepositorioHelper helper)
         {
@@ -103,11 +103,11 @@ namespace Kite.Base.Dominio.Servicos
 
                     result.TotalRegistros = entidades.Count();
                     result.TotalPaginas =
-                        (int)Math.Ceiling((double)result.TotalRegistros / PAGE_SIZE);
+                        (int)Math.Ceiling((double)result.TotalRegistros / PageSize);
 
                     result.Resultado = entidades
-                        .Skip(PAGE_SIZE * page)
-                        .Take(PAGE_SIZE)
+                        .Skip(PageSize * page)
+                        .Take(PageSize)
                         .ToList();
 
                     sessao.ComitaTransacao();

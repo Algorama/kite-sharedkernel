@@ -9,7 +9,7 @@ using Kite.Base.Dominio.Repositorio;
 
 namespace Kite.Base.Repositorio
 {
-    public class RepositorioConsulta<T> : IRepositorioConsulta<T> where T : IEntidade
+    public class RepositorioConsulta<T> : IRepositorioConsulta<T> where T : EntidadeBase
     {
         protected ISession Sessao { get; set; }
 

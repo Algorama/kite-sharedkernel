@@ -14,12 +14,12 @@ namespace Kite.Base.Repositorio
             _sessao = sessao;
         }
 
-        public IRepositorioConsulta<T> GetRepositorioConsulta<T>() where T : IEntidade
+        public IRepositorioConsulta<T> GetRepositorioConsulta<T>() where T : EntidadeBase
         {
             return new RepositorioConsulta<T>(_sessao);
         }
 
-        public IRepositorio<T> GetRepositorio<T>() where T : IAggregateRoot
+        public IRepositorio<T> GetRepositorio<T>() where T : EntidadeBase, IAggregateRoot
         {
             return new Repositorio<T>(_sessao);
         }

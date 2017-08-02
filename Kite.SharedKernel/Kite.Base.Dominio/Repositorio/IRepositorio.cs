@@ -2,7 +2,7 @@
 
 namespace Kite.Base.Dominio.Repositorio
 {
-    public interface IRepositorio<T> : IRepositorioConsulta<T> where T : IAggregateRoot
+    public interface IRepositorio<T> : IRepositorioConsulta<T> where T : EntidadeBase, IAggregateRoot
     {
         void Inclui(T entidade);
         void Altera(T entidade);
