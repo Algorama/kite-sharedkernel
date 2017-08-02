@@ -19,7 +19,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Kite.Base.Repositorio</Id>
-    <Version>1.0.2</Version>
+    <Version>1.0.5</Version>
     <Title>Kite.Base.Repositorio</Title>
     <Authors>Algorama</Authors>
     <Owners>Algorama</Owners>
