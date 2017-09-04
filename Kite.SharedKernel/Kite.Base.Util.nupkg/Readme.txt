@@ -1,1 +1,0 @@
-﻿Camada de InfraEstrutura (Util) do SharedKernel do Algorama.Kite

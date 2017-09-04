@@ -1,1 +1,0 @@
-﻿Camada de Repositório do SharedKernel do Algorama.Kite

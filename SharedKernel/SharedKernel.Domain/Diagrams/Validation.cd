@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SharedKernel.Domain.Validation.ValidatorError">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\ValidatorError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SharedKernel.Domain.Validation.ValidatorResult">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Validation\ValidatorResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Errors" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SharedKernel.Domain.Validation.ValidatorException">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\ValidatorException.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Errors" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SharedKernel.Domain.Validation.Validator&lt;T&gt;">
+    <Position X="7" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACABAAAAAAAAQAAAABAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Validation\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SharedKernel.Domain.Validation.AnnotationsValidator">
+    <Position X="7" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\AnnotationsValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SharedKernel.Domain.Validation.CnpjCpfAttribute">
+    <Position X="7" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\CnpjCpfAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SharedKernel.Domain.Validation.ValidationTypes">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\ValidationTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
