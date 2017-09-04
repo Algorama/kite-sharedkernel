@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Domain", "Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Repository", "SharedKernel.Repository\SharedKernel.Repository.csproj", "{9520561C-891B-45A1-96BB-BAC7D25F600B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.DependencyInjection", "SharedKernel.DependencyInjection\SharedKernel.DependencyInjection.csproj", "{C96D2680-5E97-423B-BC38-6850867EFFBC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Tests", "SharedKernel.Tests\SharedKernel.Tests.csproj", "{8B47159C-DFE2-4862-8817-393F26B8263A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Api", "SharedKernel.Api\SharedKernel.Api.csproj", "{8E3616DF-8BCB-491B-8386-937329A05AE5}"
@@ -22,6 +20,8 @@ EndProject
 Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "SharedKernel.DependencyInjection.nupkg", "SharedKernel.DependencyInjection.nupkg\SharedKernel.DependencyInjection.nupkg.nuproj", "{E8548212-57F4-4F05-8261-925BE305562B}"
 EndProject
 Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "SharedKernel.Api.nupkg", "SharedKernel.Api.nupkg\SharedKernel.Api.nupkg.nuproj", "{72EC3287-D496-4286-AEF3-F57866DEA75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.DependencyInjection", "SharedKernel.DependencyInjection\SharedKernel.DependencyInjection.csproj", "{C96D2680-5E97-423B-BC38-6850867EFFBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{9520561C-891B-45A1-96BB-BAC7D25F600B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9520561C-891B-45A1-96BB-BAC7D25F600B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9520561C-891B-45A1-96BB-BAC7D25F600B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B47159C-DFE2-4862-8817-393F26B8263A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B47159C-DFE2-4862-8817-393F26B8263A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B47159C-DFE2-4862-8817-393F26B8263A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,6 +61,10 @@ Global
 		{72EC3287-D496-4286-AEF3-F57866DEA75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72EC3287-D496-4286-AEF3-F57866DEA75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72EC3287-D496-4286-AEF3-F57866DEA75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96D2680-5E97-423B-BC38-6850867EFFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

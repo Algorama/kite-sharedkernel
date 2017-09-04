@@ -23,7 +23,7 @@ namespace SharedKernel.Repository.NHibernate
         public static string GetPath()
         {
             var x = new Uri(Assembly.GetExecutingAssembly().CodeBase);
-            var path = x.LocalPath.ToLower().Replace("\\kite.base.repositorio.dll", "");
+            var path = x.LocalPath.ToLower().Replace("\\sharedkernel.repository.dll", "");
             return path;
         }
 

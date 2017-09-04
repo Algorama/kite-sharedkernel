@@ -7,8 +7,8 @@
     <ProjectGuid>{C96D2680-5E97-423B-BC38-6850867EFFBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharedKernel.Util</RootNamespace>
-    <AssemblyName>SharedKernel.Util</AssemblyName>
+    <RootNamespace>SharedKernel.DependencyInjection</RootNamespace>
+    <AssemblyName>SharedKernel.DependencyInjection</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

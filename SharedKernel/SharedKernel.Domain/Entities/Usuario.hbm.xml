@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
-                   namespace="SharedKernel.Domain.Entidades" assembly="SharedKernel.Domain">
+                   namespace="SharedKernel.Domain.Entities" assembly="SharedKernel.Domain">
 
   <class name="Usuario" table="Usuario" schema="dbo" lazy="false"   >
     <id name="Id" column="Id" type="Int64">

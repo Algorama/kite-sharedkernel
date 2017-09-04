@@ -88,10 +88,6 @@
       <Project>{a628c3be-ff97-4cda-8c93-cc3c99a9c1a6}</Project>
       <Name>SharedKernel.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharedKernel.DependencyInjection\SharedKernel.DependencyInjection.csproj">
-      <Project>{09a433a9-9614-4735-9a02-046fea40e3fc}</Project>
-      <Name>SharedKernel.DependencyInjection</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\nfe.xml">

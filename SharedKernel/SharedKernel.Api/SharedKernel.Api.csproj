@@ -103,10 +103,6 @@
     <Compile Include="Swagger\AddTokenHeaderParameter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharedKernel.DependencyInjection\SharedKernel.DependencyInjection.csproj">
-      <Project>{c96d2680-5e97-423b-bc38-6850867effbc}</Project>
-      <Name>SharedKernel.DependencyInjection</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SharedKernel.Domain\SharedKernel.Domain.csproj">
       <Project>{8395874f-643d-4909-9cce-ac9677507cd5}</Project>
       <Name>SharedKernel.Domain</Name>
