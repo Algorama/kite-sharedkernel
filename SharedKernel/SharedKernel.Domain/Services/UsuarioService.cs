@@ -9,7 +9,7 @@ using SharedKernel.Domain.Validation;
 
 namespace SharedKernel.Domain.Services
 {
-    public class UsuarioService : CrudService<Usuario>
+    public class UsuarioService : CrudService<Usuario>, IUsuarioService
     {
         public UsuarioService(IHelperRepository helper, UsuarioValidator validator) : base(helper, validator)
         {
