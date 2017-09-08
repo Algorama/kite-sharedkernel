@@ -1,9 +1,7 @@
 using System;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -32,7 +30,8 @@ namespace SharedKernel.Api.Controllers
         public UsuarioController()
 	    {
 	        _usuarioService = Kernel.Get<IUsuarioService>();
-        }
+	        Service = _usuarioService;
+	    }
 
         /// <summary>
         /// Opção para Troca de Senha
@@ -114,7 +113,6 @@ namespace SharedKernel.Api.Controllers
         /// Atualiza Perfil do Usuário
         /// </summary>
         /// <returns></returns>
-        [UserAuthorization]
         [Route("api/usuario/perfil")]
         public async Task<HttpResponseMessage> PutPerfil()
         {
@@ -162,7 +160,6 @@ namespace SharedKernel.Api.Controllers
         /// Retorna o Perfil do Usuário Logado
         /// </summary>
         /// <returns>Tema</returns>
-        [UserAuthorization]
         [Route("api/usuario/perfil")]
         public IHttpActionResult GetPerfil()
         {
@@ -183,44 +180,6 @@ namespace SharedKernel.Api.Controllers
             catch (Exception ex)
             {
                 return InternalServerError(ex);
-            }
-        }
-
-        /// <summary>
-        /// Retorna a Foto do Usuário
-        /// </summary>
-        /// <returns>Foto</returns>
-        [Route("api/usuario/perfil/foto")]
-        public HttpResponseMessage GetFoto(string login)
-        {
-            var response = new HttpResponseMessage();
-            try
-            {
-                var usuario = _usuarioService.GetAll(x => x.Login == login).FirstOrDefault();
-
-                if (usuario == null)
-                {
-                    response.StatusCode = HttpStatusCode.NotFound;
-                    return response;
-                }
-
-                response.StatusCode = HttpStatusCode.OK;
-                var ms = new MemoryStream(usuario.Foto);
-                response.Content = new StreamContent(ms);
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpg");
-                return response;
-            }
-            catch (ValidatorException ex)
-            {
-                response.StatusCode = HttpStatusCode.BadRequest;
-                response.Content = new StringContent(ex.Message);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.StatusCode = HttpStatusCode.InternalServerError;
-                response.Content = new StringContent(ex.ToString());
-                return response;
             }
         }
     }

@@ -97,6 +97,7 @@
     <Compile Include="Controllers\CrudController.cs" />
     <Compile Include="Controllers\QueryController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
+    <Compile Include="Controllers\UsuarioFotoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Extensions\RequestExtensions.cs" />
     <Compile Include="Filters\UserAuthorization.cs" />
