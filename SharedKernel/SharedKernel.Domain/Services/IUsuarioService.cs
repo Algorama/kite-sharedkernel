@@ -5,7 +5,9 @@ namespace SharedKernel.Domain.Services
 {
     public interface IUsuarioService : ICrudService<Usuario>
     {
-        Token Login(string login, string senha);
-        void TrocaSenha(string login, string senhaAntiga, string senhaNova);
+        Token Login(LoginRequest loginRequest);
+        void TrocaSenha(ChangePasswordRequest changePasswordRequest);
+        string GetTema(long usuarioId);
+        void ChangeTema(long usuarioId, string newTema);
     }
 }

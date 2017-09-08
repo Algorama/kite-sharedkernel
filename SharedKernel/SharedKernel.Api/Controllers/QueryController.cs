@@ -44,26 +44,6 @@ namespace SharedKernel.Api.Controllers
         }
 
         /// <summary>
-        /// Retorna uma lista com todas as entidades
-        /// </summary>
-        /// <returns>Lista de Entidades</returns>
-        public virtual IHttpActionResult Get()
-        {
-            try
-            {
-                var result = Service.GetAll();
-                if (result == null)
-                    return NotFound();
-
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-
-        /// <summary>
         /// Retorna uma lista paginada de entidades
         /// </summary>
         /// <param name="page">Número da Página Solicitada</param>

@@ -69,6 +69,7 @@
       <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
@@ -95,6 +96,9 @@
   <ItemGroup>
     <Compile Include="Controllers\CrudController.cs" />
     <Compile Include="Controllers\QueryController.cs" />
+    <Compile Include="Controllers\TokenController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Extensions\RequestExtensions.cs" />
     <Compile Include="Filters\UserAuthorization.cs" />
     <Compile Include="Filters\RequireHttpsAttribute.cs" />
     <Compile Include="Helpers\ODataParse.cs" />

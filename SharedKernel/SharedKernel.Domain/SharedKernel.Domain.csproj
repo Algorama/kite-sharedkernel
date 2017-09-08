@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\ChangePasswordRequest.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\IAggregateRoot.cs" />
