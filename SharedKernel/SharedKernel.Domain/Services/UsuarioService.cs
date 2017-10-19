@@ -44,7 +44,7 @@ namespace SharedKernel.Domain.Services
 
         public override void Update(Usuario entidade, string user = "sistema")
         {
-            var usuarioOld = Get(entidade.Id);
+            var usuarioOld = base.Get(entidade.Id);
             entidade.Senha = usuarioOld.Senha;
             entidade.Foto = usuarioOld.Foto;
             base.Update(entidade, user);
@@ -54,20 +54,33 @@ namespace SharedKernel.Domain.Services
         {
             var senha = CryptoTools.ComputeHashMd5(loginRequest.Password);
             var usuario = GetAll(x => 
-                x.Login.ToUpper() == loginRequest.Login.ToUpper() && 
-                x.Senha == senha).FirstOrDefault();
+                x.Login.ToUpper() == loginRequest.Login.ToUpper() && x.Bloqueado == false).FirstOrDefault();
 
             if (usuario == null) return null;
 
-            var token = new Token
+            if (usuario.Senha == senha)
             {
-                UsuarioId = usuario.Id,
-                UsuarioNome = usuario.Nome,
-                Login = usuario.Login,
-                DataExpiracao = DateTime.Now
-            };
+                usuario.QtdeLoginsErrados = 0;
+                Update(usuario);
 
-            return token;
+                var token = new Token
+                {
+                    UsuarioId = usuario.Id,
+                    UsuarioNome = usuario.Nome,
+                    Login = usuario.Login,
+                    DataExpiracao = DateTime.Now
+                };
+                return token;
+            }
+
+            usuario.QtdeLoginsErrados++;
+
+            if (usuario.QtdeLoginsErrados >= usuario.QtdeLoginsErradosParaBloquear)
+                usuario.Bloqueado = true;
+
+            Update(usuario);
+
+            return null;
         }
 
         public void TrocaSenha(ChangePasswordRequest changePasswordRequest)
