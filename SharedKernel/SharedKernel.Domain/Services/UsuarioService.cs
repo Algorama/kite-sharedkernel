@@ -39,6 +39,7 @@ namespace SharedKernel.Domain.Services
         public override void Insert(Usuario entidade, string user = "sistema")
         {
             entidade.Senha = CryptoTools.ComputeHashMd5(entidade.Senha);
+            DefineRegrasParaTrocaSenha(entidade);
             base.Insert(entidade, user);
         }
 
@@ -47,7 +48,25 @@ namespace SharedKernel.Domain.Services
             var usuarioOld = base.Get(entidade.Id);
             entidade.Senha = usuarioOld.Senha;
             entidade.Foto = usuarioOld.Foto;
+            DefineRegrasParaTrocaSenha(entidade);
             base.Update(entidade, user);
+        }
+
+        private static void DefineRegrasParaTrocaSenha(Usuario entidade)
+        {
+            if (entidade.ForcarTrocaDeSenha)
+            {
+                if (entidade.DataDaUltimaTrocaDeSenha == null)
+                    entidade.DataDaUltimaTrocaDeSenha = DateTime.Today;
+
+                entidade.DataDaProximaTrocaDeSenha = entidade.IntervaloDiasParaTrocaDeSenha > 0
+                    ? entidade.DataDaUltimaTrocaDeSenha.Value.AddDays(entidade.IntervaloDiasParaTrocaDeSenha)
+                    : DateTime.Today;
+            }
+            else
+            {
+                entidade.DataDaProximaTrocaDeSenha = null;
+            }
         }
 
         public Token Login(LoginRequest loginRequest)
@@ -94,6 +113,19 @@ namespace SharedKernel.Domain.Services
                 throw new ValidationException("Senha antiga não confere");
 
             usuario.Senha = CryptoTools.ComputeHashMd5(changePasswordRequest.NewPassword);
+            usuario.DataDaUltimaTrocaDeSenha = DateTime.Today;
+            
+            if (usuario.ForcarTrocaDeSenha)
+            {
+                if (usuario.IntervaloDiasParaTrocaDeSenha > 0)
+                    usuario.DataDaProximaTrocaDeSenha = usuario.DataDaUltimaTrocaDeSenha.Value.AddDays(usuario.IntervaloDiasParaTrocaDeSenha);
+                else
+                {
+                    usuario.ForcarTrocaDeSenha = false;
+                    usuario.DataDaProximaTrocaDeSenha = null;
+                }
+            }
+
             base.Update(usuario);
         }
 
