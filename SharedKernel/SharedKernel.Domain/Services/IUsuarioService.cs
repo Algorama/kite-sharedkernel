@@ -9,5 +9,6 @@ namespace SharedKernel.Domain.Services
         void TrocaSenha(ChangePasswordRequest changePasswordRequest);
         string GetTema(long usuarioId);
         void ChangeTema(long usuarioId, string newTema);
+        void UpdatePerfil(Usuario entity, string user);
     }
 }

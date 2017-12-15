@@ -52,6 +52,13 @@ namespace SharedKernel.Domain.Services
             base.Update(entidade, user);
         }
 
+        public void UpdatePerfil(Usuario entidade, string user = "sistema")
+        {
+            var usuarioOld = base.Get(entidade.Id);
+            entidade.Senha = usuarioOld.Senha;
+            base.Update(entidade, user);
+        }
+
         private static void DefineRegrasParaTrocaSenha(Usuario entidade)
         {
             if (entidade.ForcarTrocaDeSenha)

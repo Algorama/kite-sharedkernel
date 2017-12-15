@@ -142,7 +142,7 @@ namespace SharedKernel.Api.Controllers
                     File.Delete(file.LocalFileName);
                 }
 
-                _usuarioService.Update(usuario, usuario.Login);
+                _usuarioService.UpdatePerfil(usuario, usuario.Login);
 
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
