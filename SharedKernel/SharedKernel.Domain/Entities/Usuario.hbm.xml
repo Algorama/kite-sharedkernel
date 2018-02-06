@@ -2,7 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    namespace="SharedKernel.Domain.Entities" assembly="SharedKernel.Domain">
 
-  <class name="Usuario" table="Usuario" schema="dbo" lazy="false"   >
+  <class name="Usuario" table="Usuario" lazy="false"   >
     <id name="Id" column="Id" type="Int64">
       <generator class="native" />
     </id>

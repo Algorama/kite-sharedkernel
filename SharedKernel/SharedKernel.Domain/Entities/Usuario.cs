@@ -19,6 +19,8 @@ namespace SharedKernel.Domain.Entities
         public DateTime?    DataDaUltimaTrocaDeSenha              { get; set; }
         public DateTime?    DataDaProximaTrocaDeSenha             { get; set; }
 
+        public bool DeveTrocarSenha => ForcarTrocaDeSenha && DataDaProximaTrocaDeSenha != null && DataDaProximaTrocaDeSenha <= DateTime.Today;
+
         public Usuario()
         {
             Bloqueado = false;
